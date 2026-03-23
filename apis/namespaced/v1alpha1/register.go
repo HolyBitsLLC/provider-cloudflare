@@ -7,7 +7,7 @@ import (
 
 // Package type metadata.
 const (
-	Group   = "cloudflare.m."
+	Group   = "cloudflare.m.holybitsllc.io"
 	Version = "v1alpha1"
 )
 

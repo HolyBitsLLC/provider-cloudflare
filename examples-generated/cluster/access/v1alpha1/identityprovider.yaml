@@ -1,4 +1,4 @@
-apiVersion: access.cloudflare./v1alpha1
+apiVersion: access.cloudflare.holybitsllc.io/v1alpha1
 kind: IdentityProvider
 metadata:
   annotations:

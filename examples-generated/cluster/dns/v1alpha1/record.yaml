@@ -1,4 +1,4 @@
-apiVersion: dns.cloudflare./v1alpha1
+apiVersion: dns.cloudflare.holybitsllc.io/v1alpha1
 kind: Record
 metadata:
   annotations:

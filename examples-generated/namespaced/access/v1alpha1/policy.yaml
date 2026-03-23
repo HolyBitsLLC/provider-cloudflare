@@ -1,4 +1,4 @@
-apiVersion: access.cloudflare.m./v1alpha1
+apiVersion: access.cloudflare.m.holybitsllc.io/v1alpha1
 kind: Policy
 metadata:
   annotations:

@@ -1,4 +1,4 @@
-apiVersion: dns.cloudflare.m./v1alpha1
+apiVersion: dns.cloudflare.m.holybitsllc.io/v1alpha1
 kind: Zone
 metadata:
   annotations:
