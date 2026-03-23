@@ -1,0 +1,14 @@
+apiVersion: access.cloudflare.m./v1alpha1
+kind: IdentityProvider
+metadata:
+  annotations:
+    meta.upbound.io/example-id: access/v1alpha1/identityprovider
+  labels:
+    testing.upbound.io/example-name: pin_login
+  name: pin-login
+  namespace: crossplane-system
+spec:
+  forProvider:
+    accountId: f037e56e89293a057740de681ac9abbe
+    name: PIN login
+    type: onetimepin

@@ -1,0 +1,19 @@
+apiVersion: access.cloudflare./v1alpha1
+kind: Application
+metadata:
+  annotations:
+    meta.upbound.io/example-id: access/v1alpha1/application
+  labels:
+    testing.upbound.io/example-name: staging_app
+  name: staging-app
+spec:
+  forProvider:
+    autoRedirectToIdentity: false
+    domain: staging.example.com
+    name: staging application
+    policies:
+    - ${cloudflare_access_policy.example_1.id}
+    - ${cloudflare_access_policy.example_2.id}
+    sessionDuration: 24h
+    type: self_hosted
+    zoneId: 0da42c8d2132a9ddaf714f9e7c920711

@@ -1,0 +1,23 @@
+apiVersion: access.cloudflare.m./v1alpha1
+kind: Organization
+metadata:
+  annotations:
+    meta.upbound.io/example-id: access/v1alpha1/organization
+  labels:
+    testing.upbound.io/example-name: example
+  name: example
+  namespace: crossplane-system
+spec:
+  forProvider:
+    accountId: f037e56e89293a057740de681ac9abbe
+    authDomain: example.cloudflareaccess.com
+    autoRedirectToIdentity: false
+    isUiReadOnly: false
+    loginDesign:
+    - backgroundColor: '#ffffff'
+      footerText: My footer text
+      headerText: My header text
+      logoPath: https://example.com/logo.png
+      textColor: '#000000'
+    name: example.cloudflareaccess.com
+    userSeatExpirationInactiveTime: 720h

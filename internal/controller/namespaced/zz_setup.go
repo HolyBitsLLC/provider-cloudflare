@@ -9,16 +9,34 @@ import (
 
 	"github.com/crossplane/upjet/v2/pkg/controller"
 
-	resource "github.com/crossplane/upjet-provider-template/internal/controller/namespaced/null/resource"
-	providerconfig "github.com/crossplane/upjet-provider-template/internal/controller/namespaced/providerconfig"
+	application "github.com/holybitsllc/provider-cloudflare/internal/controller/namespaced/access/application"
+	group "github.com/holybitsllc/provider-cloudflare/internal/controller/namespaced/access/group"
+	identityprovider "github.com/holybitsllc/provider-cloudflare/internal/controller/namespaced/access/identityprovider"
+	organization "github.com/holybitsllc/provider-cloudflare/internal/controller/namespaced/access/organization"
+	policy "github.com/holybitsllc/provider-cloudflare/internal/controller/namespaced/access/policy"
+	record "github.com/holybitsllc/provider-cloudflare/internal/controller/namespaced/dns/record"
+	zone "github.com/holybitsllc/provider-cloudflare/internal/controller/namespaced/dns/zone"
+	providerconfig "github.com/holybitsllc/provider-cloudflare/internal/controller/namespaced/providerconfig"
+	route "github.com/holybitsllc/provider-cloudflare/internal/controller/namespaced/tunnel/route"
+	tunnel "github.com/holybitsllc/provider-cloudflare/internal/controller/namespaced/tunnel/tunnel"
+	tunnelconfig "github.com/holybitsllc/provider-cloudflare/internal/controller/namespaced/tunnel/tunnelconfig"
 )
 
 // Setup creates all controllers with the supplied logger and adds them to
 // the supplied manager.
 func Setup(mgr ctrl.Manager, o controller.Options) error {
 	for _, setup := range []func(ctrl.Manager, controller.Options) error{
-		resource.Setup,
+		application.Setup,
+		group.Setup,
+		identityprovider.Setup,
+		organization.Setup,
+		policy.Setup,
+		record.Setup,
+		zone.Setup,
 		providerconfig.Setup,
+		route.Setup,
+		tunnel.Setup,
+		tunnelconfig.Setup,
 	} {
 		if err := setup(mgr, o); err != nil {
 			return err
@@ -31,8 +49,17 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 // the supplied manager gated.
 func SetupGated(mgr ctrl.Manager, o controller.Options) error {
 	for _, setup := range []func(ctrl.Manager, controller.Options) error{
-		resource.SetupGated,
+		application.SetupGated,
+		group.SetupGated,
+		identityprovider.SetupGated,
+		organization.SetupGated,
+		policy.SetupGated,
+		record.SetupGated,
+		zone.SetupGated,
 		providerconfig.SetupGated,
+		route.SetupGated,
+		tunnel.SetupGated,
+		tunnelconfig.SetupGated,
 	} {
 		if err := setup(mgr, o); err != nil {
 			return err

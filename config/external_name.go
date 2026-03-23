@@ -7,17 +7,21 @@ import (
 // ExternalNameConfigs contains all external name configurations for this
 // provider.
 var ExternalNameConfigs = map[string]config.ExternalName{
-	// Import requires using a randomly generated ID from provider: nl-2e21sda
-	"null_resource": idWithStub(),
-}
+	// Access
+	"cloudflare_access_organization":      config.IdentifierFromProvider,
+	"cloudflare_access_identity_provider": config.IdentifierFromProvider,
+	"cloudflare_access_group":             config.IdentifierFromProvider,
+	"cloudflare_access_application":       config.IdentifierFromProvider,
+	"cloudflare_access_policy":            config.IdentifierFromProvider,
 
-func idWithStub() config.ExternalName {
-	e := config.IdentifierFromProvider
-	e.GetExternalNameFn = func(tfstate map[string]any) (string, error) {
-		en, _ := config.IDAsExternalName(tfstate)
-		return en, nil
-	}
-	return e
+	// Tunnel
+	"cloudflare_tunnel":        config.IdentifierFromProvider,
+	"cloudflare_tunnel_config":  config.IdentifierFromProvider,
+	"cloudflare_tunnel_route":   config.IdentifierFromProvider,
+
+	// DNS
+	"cloudflare_record": config.IdentifierFromProvider,
+	"cloudflare_zone":   config.IdentifierFromProvider,
 }
 
 // ExternalNameConfigurations applies all external name configs listed in the

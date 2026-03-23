@@ -10,15 +10,19 @@ package cluster
 import (
 	"k8s.io/apimachinery/pkg/runtime"
 
-	v1alpha1 "github.com/crossplane/upjet-provider-template/apis/cluster/null/v1alpha1"
-	v1alpha1cluster "github.com/crossplane/upjet-provider-template/apis/cluster/v1alpha1"
-	v1beta1 "github.com/crossplane/upjet-provider-template/apis/cluster/v1beta1"
+	v1alpha1 "github.com/holybitsllc/provider-cloudflare/apis/cluster/access/v1alpha1"
+	v1alpha1dns "github.com/holybitsllc/provider-cloudflare/apis/cluster/dns/v1alpha1"
+	v1alpha1tunnel "github.com/holybitsllc/provider-cloudflare/apis/cluster/tunnel/v1alpha1"
+	v1alpha1cluster "github.com/holybitsllc/provider-cloudflare/apis/cluster/v1alpha1"
+	v1beta1 "github.com/holybitsllc/provider-cloudflare/apis/cluster/v1beta1"
 )
 
 func init() {
 	// Register the types with the Scheme so the components can map objects to GroupVersionKinds and back
 	AddToSchemes = append(AddToSchemes,
 		v1alpha1.SchemeBuilder.AddToScheme,
+		v1alpha1dns.SchemeBuilder.AddToScheme,
+		v1alpha1tunnel.SchemeBuilder.AddToScheme,
 		v1alpha1cluster.SchemeBuilder.AddToScheme,
 		v1beta1.SchemeBuilder.AddToScheme,
 	)

@@ -1,0 +1,16 @@
+apiVersion: access.cloudflare.m./v1alpha1
+kind: Group
+metadata:
+  annotations:
+    meta.upbound.io/example-id: access/v1alpha1/group
+  labels:
+    testing.upbound.io/example-name: example
+  name: example
+  namespace: crossplane-system
+spec:
+  forProvider:
+    accountId: f037e56e89293a057740de681ac9abbe
+    include:
+    - email:
+      - test@example.com
+    name: staging group

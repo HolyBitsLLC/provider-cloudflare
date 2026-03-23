@@ -1,0 +1,15 @@
+apiVersion: dns.cloudflare./v1alpha1
+kind: Record
+metadata:
+  annotations:
+    meta.upbound.io/example-id: dns/v1alpha1/record
+  labels:
+    testing.upbound.io/example-name: example
+  name: example
+spec:
+  forProvider:
+    content: 192.0.2.1
+    name: terraform
+    ttl: 3600
+    type: A
+    zoneId: ${var.cloudflare_zone_id}
