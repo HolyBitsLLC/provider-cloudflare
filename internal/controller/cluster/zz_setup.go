@@ -18,8 +18,6 @@ import (
 	zone "github.com/holybitsllc/provider-cloudflare/internal/controller/cluster/dns/zone"
 	providerconfig "github.com/holybitsllc/provider-cloudflare/internal/controller/cluster/providerconfig"
 	route "github.com/holybitsllc/provider-cloudflare/internal/controller/cluster/tunnel/route"
-	tunnel "github.com/holybitsllc/provider-cloudflare/internal/controller/cluster/tunnel/tunnel"
-	tunnelconfig "github.com/holybitsllc/provider-cloudflare/internal/controller/cluster/tunnel/tunnelconfig"
 )
 
 // Setup creates all controllers with the supplied logger and adds them to
@@ -35,8 +33,6 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		zone.Setup,
 		providerconfig.Setup,
 		route.Setup,
-		tunnel.Setup,
-		tunnelconfig.Setup,
 	} {
 		if err := setup(mgr, o); err != nil {
 			return err
@@ -58,8 +54,6 @@ func SetupGated(mgr ctrl.Manager, o controller.Options) error {
 		zone.SetupGated,
 		providerconfig.SetupGated,
 		route.SetupGated,
-		tunnel.SetupGated,
-		tunnelconfig.SetupGated,
 	} {
 		if err := setup(mgr, o); err != nil {
 			return err

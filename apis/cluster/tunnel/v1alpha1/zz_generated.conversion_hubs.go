@@ -8,9 +8,3 @@ package v1alpha1
 
 // Hub marks this type as a conversion hub.
 func (tr *Route) Hub() {}
-
-// Hub marks this type as a conversion hub.
-func (tr *Tunnel) Hub() {}
-
-// Hub marks this type as a conversion hub.
-func (tr *TunnelConfig) Hub() {}

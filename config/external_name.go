@@ -15,8 +15,6 @@ var ExternalNameConfigs = map[string]config.ExternalName{
 	"cloudflare_access_policy":            config.IdentifierFromProvider,
 
 	// Tunnel
-	"cloudflare_tunnel":        config.IdentifierFromProvider,
-	"cloudflare_tunnel_config":  config.IdentifierFromProvider,
 	"cloudflare_tunnel_route":   config.IdentifierFromProvider,
 
 	// DNS
